@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NguyenThanhHung - 2051120131</title>
+    <link rel="stylesheet" href="css/form_page.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Đăng Ký Thành Viên</h1>
+        <form action="./confirm_signup.php" method="POST" class="form">
+            <label for="" class="label-gr">
+                <span>Tên đăng nhập</span>
+                <input id="user" type="text" name="userName">
+            </label>
+            <label for="" class="label-gr">
+                <span>Mật Khẩu</span>
+                <input id="pass" type="text" name="passWord">
+            </label>
+            <label for="" class="label-gr">
+                <span>Mã sinh viên</span>
+                <input id="masv" type="text" name="maSV">
+            </label>
+            <label for="" class="label-gr">
+                <span>Họ tên</span>
+                <input id="hoten" type="text" name="ten">
+            </label>
+            <label for="" class="label-gr">
+                <span>Email</span>
+                <input id="email" type="email" name="email">
+            </label>
+            <label class="label-gr gender">
+                <span>Giới tính</span>
+                <div id="ip_gender">
+                    <label for="nam">
+                        <input class="gioitinh" id="nam" name="gioiTinh" value="nam" type="radio">Nam
+                    </label>
+                    <label for="nu">
+                        <input class="gioitinh" id="nu" name="gioiTinh" value="nữ" type="radio">Nữ
+                    </label>
+                    <label for="khac">
+                        <input class="gioitinh" id="gioitinhkhac" name="gioiTinh" value="Khác" type="radio">Khác
+                    </label>
+                </div>
+
+            </label>
+            <label class="label-gr">
+                <span>Sở thích</span>
+                <div id="ip_like">
+                    <label for="docsach">
+                        <input class="sothich" id="nauan" name="soThich" value="Nấu ăn" type="checkbox">Nấu ăn
+                    </label>
+                    <label for="dulich">
+                        <input class="sothich" id="choigame" name="soThich" value="Chơi game" type="checkbox">Chơi game
+                    </label>
+                    <label for="amthuc">
+                        <input class="sothich" id="nghenhac" name="soThich" value="Nghe nhạc" type="checkbox">Nghe nhạc
+                    </label>
+                    <label for="amnhac">
+                        <input class="sothich" id="tapgym" name="soThich" value="Tập gym" type="checkbox">Tập gym
+                    </label>
+                    <label for="khac">
+                        <input class="sothich" id="khac" name="soThich" value="Khác" type="checkbox">Khác
+                    </label>
+                </div>
+            </label>
+            <label for="" class="label-gr">
+                <span>Tỉnh Thành</span>
+                <select name="tinhThanh" id="tinhthanh">
+                    <option value="">Chọn tỉnh thành</option>
+                    <option value="Việt Nam">Hồ Chí Minh</option>
+                    <option value="Hà Nội">Hà Nội</option>
+                    <option value="Đà Nẵng">Đà Nẵng</option>
+                    <option value="Lào Cai">Lào Cai</option>
+                    <option value="Điện Biên">Điện Biên</option>
+                    <option value="Huế">Huế</option>
+                </select>
+            </label>
+            <label for="" class="label-gr">
+                <span>Ghi chú</span>
+                <textarea name="ghiChu" id="ghichu" cols="30" rows="5"></textarea>
+            </label>
+            <div id="loi"></div>
+            <div class="btn-all">
+                <button name="btn-add" type="submit" id="btn-add" >Đăng Ký</button>
+                <button name="btn-update" type="submit" id="btn-update" >Sửa</button>
+                <button name="btn-delete" type="submit" id="btn-delete" >Xóa</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        const hoTen = document.getElementById("hoten");
+        const maSV = document.getElementById("masv");
+        const email = document.getElementById("email");
+        const tinhthanh = document.getElementById("tinhthanh");
+        const ghiChu = document.getElementById("ghichu");
+        const kq = document.getElementById("loi");
+        const gender = document.getElementById("ip_gender");
+        const like = document.getElementById("ip_like");
+        const gioiTinh = document.querySelectorAll(".gioitinh");
+        const soThich = document.querySelectorAll(".sothich");
+
+        kq.classList.add("hidden");
+
+        function kiemTraMaSV() {
+            var maSV = document.getElementById("masv").value
+            if (isNaN(maSV)) {
+                alert("giá trị nhập vào phải là số")
+            } else {
+                alert("giá trị là số")
+            }
+        }
+
+
+
+        const showError = (ele) => {
+            ele.classList.add("error");
+        }
+        const hideError = (ele) => {
+            if (ele.classList.contains("error")) ele.classList.remove("error")
+        }
+
+        let loi = ''
+        let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        let checkMail
+        let isCheckGender
+        let isCheckLike
+
+        const validate = (err, ele) => {
+            switch (err) {
+                case 'HOTEN':
+                    loi += 'Hãy nhập họ tên của bạn <br>'
+                    showError(ele)
+                    break;
+                case 'MASV':
+                    loi += 'Hãy nhập mã sinh viên của bạn<br>'
+                    showError(ele)
+                    break;
+                case 'EMAIL':
+                    if (email.value.length == 0) loi += 'Hãy nhập email của bạn<br>'
+                    else if (!checkMail) loi += 'Hãy nhập đúng định dạng của email <br>'
+                    showError(ele)
+                    break;
+                case 'GENDER':
+                    loi += 'Hãy chọn giới tính của bạn<br />'
+                    showError(ele)
+                    break;
+                case 'LIKE':
+                    loi += 'Hãy chọn sở thích của bạn<br />'
+                    showError(ele)
+                    break;
+                case 'PROVINCE':
+                    loi += 'Hãy chọn quốc tịch của bạn<br>'
+                    showError(ele)
+                    break;
+                case 'NOTE':
+                    loi += 'Hãy nhập ghi chú của bạn <br/>'
+                    showError(ele)
+                    break;
+            }
+            if (loi.length>0){
+                kq.classList.remove("hidden")
+                kq.innerHTML=loi
+                console.log("un submit")
+            }else{
+                form.submit()
+                console.log("submit")
+                kq.classList.add("hidden")
+            }
+
+        }
+
+        
+        const kiemtra = () => {
+            isCheckLike = false
+            isCheckGender = false
+            loi = ''
+            checkMail = regex.test(email.value)
+
+            Array.from(gioiTinh).forEach(gt => { if (gt.checked) isCheckGender = true })
+            Array.from(soThich).forEach(st => { if (st.checked) isCheckLike = true })
+
+            hoTen.value.length == 0 ? validate('HOTEN', hoTen) : hideError(hoTen)
+            maSV.value.length == 0 ? validate('MASV', maSV) : hideError(maSV)
+            email.value.length == 0 || !checkMail ? validate('EMAIL', email) : hideError(email)
+            !isCheckGender ? validate('GENDER', gender) : hideError(gender)
+            !isCheckLike ? validate('LIKE', like) : hideError(like)
+            tinhthanh.value.length == 0 ? validate('PROVINCE', tinhthanh) : hideError(tinhthanh)
+            ghiChu.value.length > 100 ? validate('NOTE', ghiChu) : hideError(ghiChu)
+            validate()
+        }
+
+
+    </script>
+</body>
+
+</html>

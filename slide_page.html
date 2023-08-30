@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NguyenThanhHung - 2051120131</title>
+    <link rel="stylesheet" href="css/slide_page.css">
+</head>
+
+<body>
+    <h1>Siêu Xe</h1>
+    <div class="imgage">
+        <div id="vitri"></div>
+        <img id="anh" src="/images/0.jpg" alt="">
+        <div class="btn_container">
+            <button onclick="first()"> &lt;&lt; </button>
+            <button onclick="prev()"> &lt; </button>
+            <button onclick="next()"> > </button>
+            <button onclick="last()"> >> </button>
+        </div>
+    </div>
+
+    <script>
+        const anh = document.getElementById('anh')
+        const vitrAnh = document.getElementById('vitri')
+        let images = []
+        let index = 0
+        let sohinh = 10
+        for (let i = 0; i < sohinh; i++) {
+            images[i] = new Image()
+            images[i].src = 'images/' + i + '.jpg'
+        }
+        vitrAnh.innerHTML = `Xe số ${index + 1}/${images.length}`
+        anh.src = images[index].src
+
+        const first = function () {
+            index = 0
+            vitrAnh.innerHTML = `Xe số 1/${images.length}`
+            anh.src = images[0].src
+        }
+        const last = function () {
+            index = images.length-1
+            vitrAnh.innerHTML = `Xe số ${images.length}/${images.length}`
+            anh.src = images[images.length - 1].src
+        }
+        const prev = function () {
+            index--
+            if (index < 0) index = images.length - 1
+            vitrAnh.innerHTML = `Xe số ${index + 1}/${images.length}`
+            anh.src = images[index].src
+        }
+        const next = function () {
+            index++
+            if (index >= images.length) index = 0
+            vitrAnh.innerHTML = `Xe số ${index + 1}/${images.length}`
+            anh.src = images[index].src
+        }
+    </script>
+</body>
+
+</html>

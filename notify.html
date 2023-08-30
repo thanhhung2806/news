@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Thông báo</title>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</head>
+
+<style>
+    .container {
+        width: 100%;
+        text-align: center;
+    }
+
+    h2 {
+        color: orangered;
+        text-transform: uppercase;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    button {
+        text-transform: uppercase;
+        height: 42px;
+        background-color: rgb(29, 179, 29);
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    button:hover {
+        cursor: pointer;
+        background-color: orangered;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h2>
+            <?php echo $thongbao ?>
+        </h2>
+        <button onclick="goBack()">Trở lại</button>
+    </div>
+</body>
+
+</html>

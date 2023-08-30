@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NguyenThanhHung - 2051120131</title>
+    <link rel="stylesheet" href="css/sales_page.css">
+</head>
+
+<body>
+    <div class="container">
+    <h1>Trang Bán Điện Thoại</h1>
+    <select name="mucgia" id="mucgia">
+        <option value="all">Tất cả</option>
+        <option value="2000000">&lt; 2.000.000</option>
+        <option value="5000000">&lt; 5.000.000</option>
+        <option value="10000000">&lt; 10.000.000</option>
+        <option value="40000000">&lt; 40.000.000</option>
+    </select>
+    <hr>
+    <table id="shop">
+        <thead>
+            <tr class="row">
+                <th><input type="checkbox"></th>
+                <th>Sản phẩm</th>
+                <th>Giá tiền</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+            </tr>
+        </thead>
+        <tbody id="body_tb">
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="4">TỔNG TIỀN</th>
+                <th colspan="1"><span id="tongtien"></span></th>
+            </tr>
+        </tfoot>
+    </table>
+    <script src="js/sales_page.js"></script>
+</div>
+</body>
+
+</html>

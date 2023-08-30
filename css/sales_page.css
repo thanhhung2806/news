@@ -1,0 +1,28 @@
+.container {
+  width: 1000px;
+  margin: auto;
+  border: 1px solid #000;
+  background-color: antiquewhite;
+}
+h1 {
+  text-align: center;
+}
+select {
+  margin-left: 45%;
+}
+#shop {
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+tbody th {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+td,th {
+  width: 200px;
+  height: 40px;
+  border: 1px solid black;
+  padding: 6px;
+}

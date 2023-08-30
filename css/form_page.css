@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+  background-color: antiquewhite;
+}
+
+.container {
+  width: 600px;
+  margin: auto;
+  border: 1px solid #000;
+  background-color: antiquewhite;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: orangered;
+  text-align: center;
+}
+
+form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.label-gr {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.label-gr div {
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  background-color: antiquewhite;
+}
+
+.label-gr:not(.gender) div label {
+  flex: 1;
+}
+
+.label-gr div label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+input,
+select {
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  outline: none;
+  padding-left: 10px;
+}
+
+textarea {
+  border: 1px solid #000;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+span {
+  font-weight: 700;
+}
+
+.btn-all{
+
+  display: flex;
+  text-align: center;
+}
+button{
+  width: 200px;
+  height: 50px;
+  margin: 20px;
+  background-color: rgb(24, 224, 227);
+  
+  
+}
+#btn-add #btn-update #btn-delete{
+  margin-left: 100px;
+}
+button:hover {
+  cursor: pointer;
+  background-color: rgb(2, 141, 216);
+}
+
+#loi {
+  width: 100%;
+  background-color: antiquewhite;
+  padding: 20px;
+  border-radius: 5px;
+  font-style: italic;
+  color: red;
+  font-size: 20px;
+}
+
+#loi.hidden {
+  display: none;
+}
+
+input.error,
+div.error,
+select.error,
+textarea.error {
+  color: none;
+}

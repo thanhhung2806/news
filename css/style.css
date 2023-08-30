@@ -1,0 +1,308 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+  background-color: #d8e4f4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.m-tb {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.t-justify {
+  text-align: justify;
+}
+
+.small-img {
+  width: 40%;
+}
+
+header {
+  background-color: #fff;
+}
+
+.header-top {
+  text-align: center;
+  padding: 20px;
+  color: orangered;
+}
+.header-top p {
+  color: #000;
+}
+
+.header-nav {
+  background-color: #2fa1b3;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.nav-search {
+  margin-top: 0.7%;
+  margin-right: 16%;
+  text-align: center;
+}
+.nav-search input {
+  font-size: 20px;
+}
+.nav-search button {
+  font-size: 20px;
+}
+.nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  height: 54px;
+}
+
+.nav-item + .nav-item {
+  margin-left: 20px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  display: block;
+  color: #fff;
+  line-height: 54px;
+}
+
+.nav-item:hover a {
+  text-decoration: underline;
+}
+
+.content {
+  display: flex;
+  margin: 20px 0;
+}
+
+.content-left {
+  flex: 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.content-left .box-news {
+  background-color: #fff;
+  padding: 20px 15px;
+  width: 30%;
+  border-radius: 5px;
+}
+
+.content-left .box-news:hover {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content-left .box-news a {
+  text-decoration: none;
+  color: #000;
+}
+
+.content-left .box-news h2 {
+  font-size: 22px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  display: -webkit-box;
+  max-height: 52px;
+  line-height: 26px;
+}
+
+.box-news h2:hover {
+  text-decoration: underline;
+}
+
+.content-left .box-news p.date {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #666;
+}
+
+.content-left .box-news p.des {
+  font-size: 14px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  display: -webkit-box;
+  max-height: 60px;
+  line-height: 20px;
+}
+
+.content-left .box-news p.des:hover {
+  color: red;
+}
+
+.content-left .box-news img {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.content-right {
+  flex: 1;
+}
+
+.content-right .box {
+  padding: 20px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content-right .box h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.content-right .box .img img {
+  width: 50px;
+  height: 50px;
+}
+
+
+
+
+
+
+
+.box-btn {
+  padding: 20px;
+  height: 140px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.btn-page {
+  border-radius: 10px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.btn-page a {
+  text-decoration: none;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #32bacf;
+  color: rgb(0, 0, 0);
+}
+
+.btn-page a:hover {
+  background-color: rgb(147, 228, 240);
+}
+
+.sec-form {
+  display: flex;
+  background-color: #2fa1b3;
+}
+
+.sec-form-left {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sec-form-left img {
+  border-radius: 10px;
+  display: flex;
+}
+
+.sec-form-right {
+  flex: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sec-form-right form {
+  padding: 20px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.sec-form-right form h2 {
+  font-size: 30px;
+  line-height: 50px;
+  color: #fff;
+}
+
+.sec-form-right form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.sec-form-right form .form-group label {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.sec-form-right form .form-group input {
+  margin-top: 10px;
+  height: 42px;
+  box-shadow: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 22px;
+}
+
+.sec-form-right form .btn {
+  text-align: center;
+}
+
+.sec-form-right form .btn button {
+  width: 150px;
+  height: 42px;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+footer {
+  margin-top: 20px;
+}
+
+footer .map {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+footer .copyright {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 22px;
+  color: #666;
+  font-weight: 400;
+}
+
+.content-left.content-detail {
+  display: block;
+  text-align: center;
+  background-color: #fff;
+  padding: 40px 20px;
+  margin-right: 20px;
+  border-radius: 5px;
+}
